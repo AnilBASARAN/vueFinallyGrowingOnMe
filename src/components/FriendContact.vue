@@ -36,7 +36,12 @@ export default {
       default:false,
       validator:function(value){
         return value === true || value === false;
-      }
+      },
+
+/*      validator(value) {
+      // only allow these three strings
+      return ["small", "medium", "large"].includes(value);
+    } */
     }
   },
   data() {
