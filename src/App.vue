@@ -9,12 +9,14 @@
       first-name="Manuel Lorenz"
       email-address= "manuel@localhost.com"
       phone-number= "0123 45678 90"
+      is-favorite=true
        ></friend-contact>
       <friend-contact
       
       first-name="John Doe"
       email-address= "john@localhost.com"
       phone-number= "555 45678 90"
+      is-favorite=false
        ></friend-contact>
     </ul>
   </section>
@@ -26,9 +28,12 @@ export default {
   components:{FriendContact},
   data() {
     return {
-      
+     
     };
   },
+  methods:{
+
+  }
 };
 </script>
 
