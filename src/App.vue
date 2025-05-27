@@ -10,7 +10,8 @@
       :first-name="friend.name"
       :email-address= "friend.email"
       :phone-number= "friend.phone"
-      is-favorite=true
+      :is-favorite="friend.isFavorite"
+      @toggle-favorite="toggleFavoriteStatus"
        ></friend-contact>
      
     </ul>
@@ -24,13 +25,15 @@ export default {
   data() {
     return {
      friends:[
-      {id:"julie",name:"Julie Jones",phone:"0987 555 43 21",email:"julie@mail.com"},
-      {id:"max",name:"Max Payne",phone:"222 555 43 21",email:"max@mail.com"},
+      {id:"julie",name:"Julie Jones",phone:"0987 555 43 21",email:"julie@mail.com",isFavorite:true},
+      {id:"max",name:"Max Payne",phone:"222 555 43 21",email:"max@mail.com",isFavorite:false},
     ]
     }
   },
   methods:{
-
+      toggleFavoriteStatus(){
+        alert("This works!")
+      }
   }
 };
 </script>
