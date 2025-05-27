@@ -7,6 +7,7 @@
       <friend-contact
       v-for="friend in friends"
       :key="friend.id"
+      :id="friend.id"
       :first-name="friend.name"
       :email-address= "friend.email"
       :phone-number= "friend.phone"
@@ -31,8 +32,9 @@ export default {
     }
   },
   methods:{
-      toggleFavoriteStatus(){
-        alert("This works!")
+      toggleFavoriteStatus(friendId){
+    const identifiedFriend = this.friends.find(friend=>friend.id===friendId);
+    identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
       }
   }
 };
