@@ -20,7 +20,25 @@
 <script>
 export default {
   name: "FriendContact",
-  props: [ "firstName", "phoneNumber", "emailAddress","isFavorite" ],
+  // props: [ "firstName", "phoneNumber", "emailAddress","isFavorite" ],
+  props:{
+    firstName:{
+      type:String,
+      required:true
+    },
+    phoneNumber:{
+      type:String,
+      required:true
+    },
+    isFavorite:{
+      type:Boolean,
+      required:false,
+      default:false,
+      validator:function(value){
+        return value === true || value === false;
+      }
+    }
+  },
   data() {
     return {
       detailsAreVisible: false,
