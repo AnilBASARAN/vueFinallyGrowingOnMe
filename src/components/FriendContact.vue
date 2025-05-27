@@ -30,6 +30,10 @@ export default {
       type:String,
       required:true
     },
+    emailAddress:{
+      type:String,
+      required:true
+    },
     isFavorite:{
       type:Boolean,
       required:false,

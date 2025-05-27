@@ -5,19 +5,14 @@
     </header>
     <ul>
       <friend-contact
-      
-      first-name="Manuel Lorenz"
-      email-address= "manuel@localhost.com"
-      phone-number= "0123 45678 90"
+      v-for="friend in friends"
+      :key="friend.id"
+      :first-name="friend.name"
+      :email-address= "friend.email"
+      :phone-number= "friend.phone"
       is-favorite=true
        ></friend-contact>
-      <friend-contact
-      
-      first-name="John Doe"
-      email-address= "john@localhost.com"
-      phone-number= "555 45678 90"
-      
-       ></friend-contact>
+     
     </ul>
   </section>
 </template>
@@ -28,8 +23,11 @@ export default {
   components:{FriendContact},
   data() {
     return {
-     
-    };
+     friends:[
+      {id:"julie",name:"Julie Jones",phone:"0987 555 43 21",email:"julie@mail.com"},
+      {id:"max",name:"Max Payne",phone:"222 555 43 21",email:"max@mail.com"},
+    ]
+    }
   },
   methods:{
 
