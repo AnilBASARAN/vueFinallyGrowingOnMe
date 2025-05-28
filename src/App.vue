@@ -1,7 +1,7 @@
 <template>
   <section>
     <header>
-      <h1>My Friendss</h1>
+      <h1>My Friends</h1>
     </header>
     <new-friend @add-contact="addContact" ></new-friend>
     <ul>
@@ -14,6 +14,7 @@
       :phone-number= "friend.phone"
       :is-favorite="friend.isFavorite"
       @toggle-favorite="toggleFavoriteStatus"
+      @delete-friend="deleteContact"
        ></friend-contact>
      
     </ul>
@@ -47,6 +48,9 @@ export default {
           isFavorite:false
         };
         this.friends.push(newFriendContact);
+      },
+      deleteContact(friendId){
+        this.friends = this.friends.filter((friend) => friend.id !== friendId )
       }
   }
 };
